@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
+//import android.view.inputmethod.InputMethodManager;
 
 import android.widget.Button;
 import android.widget.TextView;
@@ -35,10 +35,10 @@ public class Loto6Activity extends Activity implements OnClickListener{
 		EditText edit1=(EditText)findViewById(R.id.edit1);
 		int max_number=0;
 		int[] num_mem;
-		
+
 		textview1.setText("");
 		textview2.setText("");
-		
+
 		try{
 			max_number=Integer.parseInt(edit1.getText().toString());
 		}catch(NumberFormatException e){
@@ -49,11 +49,11 @@ public class Loto6Activity extends Activity implements OnClickListener{
 			max_number=43;
 			edit1.setText("43");
 		}
-		
+
 		int num_mem_len=(max_number<12 ? max_number : 12); /*ある数まで表示する*/
 		num_mem_len=12;
 		num_mem = new int[num_mem_len];
-		
+
 		if(max_number<12){
 			for(int i = 0;i</*max_number*/12;i++){ //今は固定
 				num_mem[i]=rnd.nextInt(max_number)+1;
