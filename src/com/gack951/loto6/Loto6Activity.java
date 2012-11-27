@@ -6,10 +6,11 @@ import java.security.SecureRandom;
 import java.util.Random;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-//import android.view.inputmethod.InputMethodManager;
+import android.view.inputmethod.InputMethodManager;
 
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ public class Loto6Activity extends Activity implements OnClickListener{
 
 		button1=(Button)findViewById(R.id.button1);
 		button1.setOnClickListener(this);
+		
 	}
 
 	public void onClick(View v){
@@ -35,7 +37,10 @@ public class Loto6Activity extends Activity implements OnClickListener{
 		EditText edit1=(EditText)findViewById(R.id.edit1);
 		int max_number=0;
 		int[] num_mem;
-
+		
+		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(edit1.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+		
 		textview1.setText("");
 		textview2.setText("");
 
